@@ -8,6 +8,7 @@ import {
   SelectArrayInput,
   TextInput,
   PasswordInput,
+  NumberInput,
 } from "react-admin";
 
 import { AccountTitle } from "../account/AccountTitle";
@@ -28,6 +29,7 @@ export const UserCreate = (props: CreateProps): React.ReactElement => {
         <TextInput label="First Name" source="firstName" />
         <TextInput label="Last Name" source="lastName" />
         <PasswordInput label="Password" source="password" />
+        <NumberInput step={1} label="Phone-number" source="phoneNumber" />
         <SelectArrayInput
           source="roles"
           choices={ROLES_OPTIONS}

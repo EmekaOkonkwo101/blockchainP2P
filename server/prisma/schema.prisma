@@ -8,15 +8,16 @@ generator client {
 }
 
 model User {
-  accounts  Account[]
-  createdAt DateTime  @default(now())
-  firstName String?
-  id        String    @id @default(cuid())
-  lastName  String?
-  password  String
-  roles     String[]
-  updatedAt DateTime  @updatedAt
-  username  String    @unique
+  accounts    Account[]
+  createdAt   DateTime  @default(now())
+  firstName   String?
+  id          String    @id @default(cuid())
+  lastName    String?
+  password    String
+  phoneNumber Int
+  roles       String[]
+  updatedAt   DateTime  @updatedAt
+  username    String    @unique
 }
 
 model Account {
