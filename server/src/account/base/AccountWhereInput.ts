@@ -15,6 +15,7 @@ import { FloatNullableFilter } from "../../util/FloatNullableFilter";
 import { Type } from "class-transformer";
 import { IsOptional, ValidateNested } from "class-validator";
 import { StringFilter } from "../../util/StringFilter";
+import { StringNullableFilter } from "../../util/StringNullableFilter";
 import { UserWhereUniqueInput } from "../../user/base/UserWhereUniqueInput";
 @InputType()
 class AccountWhereInput {
@@ -50,6 +51,17 @@ class AccountWhereInput {
     nullable: true,
   })
   id?: StringFilter;
+
+  @ApiProperty({
+    required: false,
+    type: StringNullableFilter,
+  })
+  @Type(() => StringNullableFilter)
+  @IsOptional()
+  @Field(() => StringNullableFilter, {
+    nullable: true,
+  })
+  transaction?: StringNullableFilter;
 
   @ApiProperty({
     required: false,

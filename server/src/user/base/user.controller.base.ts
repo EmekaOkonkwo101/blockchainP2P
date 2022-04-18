@@ -304,6 +304,7 @@ export class UserControllerBase {
         balance: true,
         createdAt: true,
         id: true,
+        transaction: true,
         updatedAt: true,
 
         user: {

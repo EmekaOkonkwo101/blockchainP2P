@@ -15,6 +15,7 @@ const CREATE_INPUT = {
   balance: 42.42,
   createdAt: new Date(),
   id: "exampleId",
+  transaction: "exampleTransaction",
   updatedAt: new Date(),
 };
 const CREATE_RESULT = {
@@ -22,6 +23,7 @@ const CREATE_RESULT = {
   balance: 42.42,
   createdAt: new Date(),
   id: "exampleId",
+  transaction: "exampleTransaction",
   updatedAt: new Date(),
 };
 const FIND_MANY_RESULT = [
@@ -30,6 +32,7 @@ const FIND_MANY_RESULT = [
     balance: 42.42,
     createdAt: new Date(),
     id: "exampleId",
+    transaction: "exampleTransaction",
     updatedAt: new Date(),
   },
 ];
@@ -38,6 +41,7 @@ const FIND_ONE_RESULT = {
   balance: 42.42,
   createdAt: new Date(),
   id: "exampleId",
+  transaction: "exampleTransaction",
   updatedAt: new Date(),
 };
 

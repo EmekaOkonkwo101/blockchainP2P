@@ -61,6 +61,17 @@ class Account {
   id!: string;
 
   @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  transaction!: string | null;
+
+  @ApiProperty({
     required: true,
   })
   @IsDate()

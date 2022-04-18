@@ -1,12 +1,15 @@
 import * as React from "react";
+
 import {
   Edit,
   SimpleForm,
   EditProps,
   NumberInput,
+  TextInput,
   ReferenceInput,
   SelectInput,
 } from "react-admin";
+
 import { UserTitle } from "../user/UserTitle";
 
 export const AccountEdit = (props: EditProps): React.ReactElement => {
@@ -15,7 +18,8 @@ export const AccountEdit = (props: EditProps): React.ReactElement => {
       <SimpleForm>
         <NumberInput label="Amount" source="amount" />
         <NumberInput label="Balance" source="balance" />
-        <ReferenceInput source="user.id" reference="User" label="user">
+        <TextInput label="Transaction" source="transaction" />
+        <ReferenceInput source="user.id" reference="User" label="User">
           <SelectInput optionText={UserTitle} />
         </ReferenceInput>
       </SimpleForm>
