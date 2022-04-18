@@ -29,7 +29,7 @@ export class AuthResolver {
   }
 
   @Query(() => User)
-  async me(@Context('req') request: Request): Promise<User> {
-    return this.authService.me(request.headers.authorization);
+  async profile(@Context('req') request: Request): Promise<User> {
+    return this.authService.profile(request.headers.authorization);
   }
 }

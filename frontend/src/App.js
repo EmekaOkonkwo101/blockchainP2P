@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from "react";
+import "./App.css";
+
+import { profile } from "./lib/auth";
+
+import Auth from "./Auth";
 
 function App() {
+  const [user, setUser] = useState();
+
+  useEffect(() => {
+    async function getUser() {
+      const result = await profile();
+      setUser(result);
+    }
+    getUser();
+  }, [setUser]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {user ? (
+        <div>
+          <h1>Hello guy</h1>
+        </div>
+      ) : (
+        <Auth setUser={setUser} />
+      )}
     </div>
   );
 }

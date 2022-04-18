@@ -147,7 +147,7 @@ type Query {
   accounts(orderBy: [AccountOrderByInput!], skip: Float, take: Float, where: AccountWhereInput): [Account!]!
   location(where: LocationWhereUniqueInput!): Location
   locations(orderBy: [LocationOrderByInput!], skip: Float, take: Float, where: LocationWhereInput): [Location!]!
-  me: User!
+  profile: User!
   user(where: UserWhereUniqueInput!): User
   userInfo: UserInfo!
   users(orderBy: [UserOrderByInput!], skip: Float, take: Float, where: UserWhereInput): [User!]!

@@ -20,8 +20,8 @@ export class AuthController {
   }
   @ApiBearerAuth()
   @ApiOkResponse({ type: User })
-  @Get("me")
-  async me(@Req() request: Request): Promise<User> {
-    return this.authService.me(request.headers.authorization);
+  @Get("profile")
+  async profile(@Req() request: Request): Promise<User> {
+    return this.authService.profile(request.headers.authorization);
   }
 }

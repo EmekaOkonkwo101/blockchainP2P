@@ -74,7 +74,7 @@ export class AuthService {
       roles: user.roles,
     };
   }
-  async me(authorization: string = ""): Promise<User> {
+  async profile(authorization: string = ""): Promise<User> {
     const bearer = authorization.replace(/^Bearer\s/, "");
     const username = this.tokenService.decodeToken(bearer);
     const result = await this.userService.findOne({
