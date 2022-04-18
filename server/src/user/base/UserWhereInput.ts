@@ -17,7 +17,7 @@ import { Type } from "class-transformer";
 import { StringNullableFilter } from "../../util/StringNullableFilter";
 import { GunListRelationFilter } from "../../gun/base/GunListRelationFilter";
 import { StringFilter } from "../../util/StringFilter";
-import { IntFilter } from "../../util/IntFilter";
+import { IntNullableFilter } from "../../util/IntNullableFilter";
 @InputType()
 class UserWhereInput {
   @ApiProperty({
@@ -79,14 +79,14 @@ class UserWhereInput {
 
   @ApiProperty({
     required: false,
-    type: IntFilter,
+    type: IntNullableFilter,
   })
-  @Type(() => IntFilter)
+  @Type(() => IntNullableFilter)
   @IsOptional()
-  @Field(() => IntFilter, {
+  @Field(() => IntNullableFilter, {
     nullable: true,
   })
-  phoneNumber?: IntFilter;
+  phoneNumber?: IntNullableFilter;
 
   @ApiProperty({
     required: false,

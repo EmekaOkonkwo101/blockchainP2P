@@ -80,12 +80,15 @@ class User {
   lastName!: string | null;
 
   @ApiProperty({
-    required: true,
+    required: false,
     type: Number,
   })
   @IsInt()
-  @Field(() => Number)
-  phoneNumber!: number;
+  @IsOptional()
+  @Field(() => Number, {
+    nullable: true,
+  })
+  phoneNumber!: number | null;
 
   @ApiProperty({
     required: true,

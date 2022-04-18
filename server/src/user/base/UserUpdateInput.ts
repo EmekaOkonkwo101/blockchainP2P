@@ -83,7 +83,7 @@ class UserUpdateInput {
   @Field(() => Number, {
     nullable: true,
   })
-  phoneNumber?: number;
+  phoneNumber?: number | null;
 
   @ApiProperty({
     required: false,

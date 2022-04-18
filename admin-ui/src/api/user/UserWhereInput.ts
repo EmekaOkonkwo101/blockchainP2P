@@ -2,7 +2,7 @@ import { AccountListRelationFilter } from "../account/AccountListRelationFilter"
 import { StringNullableFilter } from "../../util/StringNullableFilter";
 import { GunListRelationFilter } from "../gun/GunListRelationFilter";
 import { StringFilter } from "../../util/StringFilter";
-import { IntFilter } from "../../util/IntFilter";
+import { IntNullableFilter } from "../../util/IntNullableFilter";
 
 export type UserWhereInput = {
   accounts?: AccountListRelationFilter;
@@ -10,6 +10,6 @@ export type UserWhereInput = {
   guns?: GunListRelationFilter;
   id?: StringFilter;
   lastName?: StringNullableFilter;
-  phoneNumber?: IntFilter;
+  phoneNumber?: IntNullableFilter;
   username?: StringFilter;
 };
