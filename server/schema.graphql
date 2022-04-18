@@ -133,6 +133,7 @@ type Mutation {
   deleteLocation(where: LocationWhereUniqueInput!): Location!
   deleteUser(where: UserWhereUniqueInput!): User!
   login(credentials: Credentials!): UserInfo!
+  signup(credentials: Credentials!): UserInfo!
   updateAccount(data: AccountUpdateInput!, where: AccountWhereUniqueInput!): Account!
   updateLocation(data: LocationUpdateInput!, where: LocationWhereUniqueInput!): Location!
   updateUser(data: UserUpdateInput!, where: UserWhereUniqueInput!): User!
@@ -146,6 +147,7 @@ type Query {
   accounts(orderBy: [AccountOrderByInput!], skip: Float, take: Float, where: AccountWhereInput): [Account!]!
   location(where: LocationWhereUniqueInput!): Location
   locations(orderBy: [LocationOrderByInput!], skip: Float, take: Float, where: LocationWhereInput): [Location!]!
+  me: User!
   user(where: UserWhereUniqueInput!): User
   userInfo: UserInfo!
   users(orderBy: [UserOrderByInput!], skip: Float, take: Float, where: UserWhereInput): [User!]!
