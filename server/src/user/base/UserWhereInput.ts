@@ -15,7 +15,6 @@ import { AccountListRelationFilter } from "../../account/base/AccountListRelatio
 import { ValidateNested, IsOptional } from "class-validator";
 import { Type } from "class-transformer";
 import { StringNullableFilter } from "../../util/StringNullableFilter";
-import { GunListRelationFilter } from "../../gun/base/GunListRelationFilter";
 import { StringFilter } from "../../util/StringFilter";
 import { IntNullableFilter } from "../../util/IntNullableFilter";
 @InputType()
@@ -42,18 +41,6 @@ class UserWhereInput {
     nullable: true,
   })
   firstName?: StringNullableFilter;
-
-  @ApiProperty({
-    required: false,
-    type: () => GunListRelationFilter,
-  })
-  @ValidateNested()
-  @Type(() => GunListRelationFilter)
-  @IsOptional()
-  @Field(() => GunListRelationFilter, {
-    nullable: true,
-  })
-  guns?: GunListRelationFilter;
 
   @ApiProperty({
     required: false,

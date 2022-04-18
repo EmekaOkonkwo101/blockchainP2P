@@ -43,7 +43,7 @@ class GunOrderByInput {
   @Field(() => SortOrder, {
     nullable: true,
   })
-  messageId?: SortOrder;
+  message?: SortOrder;
 
   @ApiProperty({
     required: false,

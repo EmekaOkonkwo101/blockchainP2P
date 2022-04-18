@@ -70,25 +70,11 @@ export class GunControllerBase {
       );
     }
     return await this.service.create({
-      data: {
-        ...data,
-
-        message: data.message
-          ? {
-              connect: data.message,
-            }
-          : undefined,
-      },
+      data: data,
       select: {
         createdAt: true,
         id: true,
-
-        message: {
-          select: {
-            id: true,
-          },
-        },
-
+        message: true,
         name: true,
         updatedAt: true,
       },
@@ -126,13 +112,7 @@ export class GunControllerBase {
       select: {
         createdAt: true,
         id: true,
-
-        message: {
-          select: {
-            id: true,
-          },
-        },
-
+        message: true,
         name: true,
         updatedAt: true,
       },
@@ -169,13 +149,7 @@ export class GunControllerBase {
       select: {
         createdAt: true,
         id: true,
-
-        message: {
-          select: {
-            id: true,
-          },
-        },
-
+        message: true,
         name: true,
         updatedAt: true,
       },
@@ -229,25 +203,11 @@ export class GunControllerBase {
     try {
       return await this.service.update({
         where: params,
-        data: {
-          ...data,
-
-          message: data.message
-            ? {
-                connect: data.message,
-              }
-            : undefined,
-        },
+        data: data,
         select: {
           createdAt: true,
           id: true,
-
-          message: {
-            select: {
-              id: true,
-            },
-          },
-
+          message: true,
           name: true,
           updatedAt: true,
         },
@@ -285,13 +245,7 @@ export class GunControllerBase {
         select: {
           createdAt: true,
           id: true,
-
-          message: {
-            select: {
-              id: true,
-            },
-          },
-
+          message: true,
           name: true,
           updatedAt: true,
         },

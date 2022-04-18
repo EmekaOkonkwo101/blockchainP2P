@@ -20,7 +20,6 @@ import {
   IsInt,
 } from "class-validator";
 import { Type } from "class-transformer";
-import { Gun } from "../../gun/base/Gun";
 @ObjectType()
 class User {
   @ApiProperty({
@@ -50,15 +49,6 @@ class User {
     nullable: true,
   })
   firstName!: string | null;
-
-  @ApiProperty({
-    required: false,
-    type: () => [Gun],
-  })
-  @ValidateNested()
-  @Type(() => Gun)
-  @IsOptional()
-  guns?: Array<Gun>;
 
   @ApiProperty({
     required: true,
