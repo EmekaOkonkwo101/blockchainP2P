@@ -12,8 +12,9 @@ https://docs.amplication.com/docs/how-to/custom-code
 import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
 import { AccountUpdateManyWithoutUsersInput } from "./AccountUpdateManyWithoutUsersInput";
-import { ValidateNested, IsOptional, IsString } from "class-validator";
+import { ValidateNested, IsOptional, IsString, IsInt } from "class-validator";
 import { Type } from "class-transformer";
+import { GunUpdateManyWithoutUsersInput } from "./GunUpdateManyWithoutUsersInput";
 @InputType()
 class UserUpdateInput {
   @ApiProperty({
@@ -41,6 +42,18 @@ class UserUpdateInput {
 
   @ApiProperty({
     required: false,
+    type: () => GunUpdateManyWithoutUsersInput,
+  })
+  @ValidateNested()
+  @Type(() => GunUpdateManyWithoutUsersInput)
+  @IsOptional()
+  @Field(() => GunUpdateManyWithoutUsersInput, {
+    nullable: true,
+  })
+  guns?: GunUpdateManyWithoutUsersInput;
+
+  @ApiProperty({
+    required: false,
     type: String,
   })
   @IsString()
@@ -60,6 +73,17 @@ class UserUpdateInput {
     nullable: true,
   })
   password?: string;
+
+  @ApiProperty({
+    required: false,
+    type: Number,
+  })
+  @IsInt()
+  @IsOptional()
+  @Field(() => Number, {
+    nullable: true,
+  })
+  phoneNumber?: number;
 
   @ApiProperty({
     required: false,

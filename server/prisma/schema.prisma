@@ -8,15 +8,17 @@ generator client {
 }
 
 model User {
-  accounts  Account[]
-  createdAt DateTime  @default(now())
-  firstName String?
-  id        String    @id @default(cuid())
-  lastName  String?
-  password  String
-  roles     String[]
-  updatedAt DateTime  @updatedAt
-  username  String    @unique
+  accounts    Account[]
+  createdAt   DateTime  @default(now())
+  firstName   String?
+  guns        Gun[]
+  id          String    @id @default(cuid())
+  lastName    String?
+  password    String
+  phoneNumber Int
+  roles       String[]
+  updatedAt   DateTime  @updatedAt
+  username    String    @unique
 }
 
 model Account {
@@ -35,5 +37,14 @@ model Location {
   country   String?
   createdAt DateTime @default(now())
   id        String   @id @default(cuid())
+  updatedAt DateTime @updatedAt
+}
+
+model Gun {
+  createdAt DateTime @default(now())
+  id        String   @id @default(cuid())
+  message   User?    @relation(fields: [messageId], references: [id])
+  messageId String?
+  name      String?
   updatedAt DateTime @updatedAt
 }
