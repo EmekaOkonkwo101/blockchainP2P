@@ -25,7 +25,6 @@ import { DeleteGunArgs } from "./DeleteGunArgs";
 import { GunFindManyArgs } from "./GunFindManyArgs";
 import { GunFindUniqueArgs } from "./GunFindUniqueArgs";
 import { Gun } from "./Gun";
-import { User } from "../../user/base/User";
 import { GunService } from "../gun.service";
 
 @graphql.Resolver(() => Gun)
@@ -132,15 +131,7 @@ export class GunResolverBase {
     // @ts-ignore
     return await this.service.create({
       ...args,
-      data: {
-        ...args.data,
-
-        message: args.data.message
-          ? {
-              connect: args.data.message,
-            }
-          : undefined,
-      },
+      data: args.data,
     });
   }
 
@@ -179,15 +170,7 @@ export class GunResolverBase {
       // @ts-ignore
       return await this.service.update({
         ...args,
-        data: {
-          ...args.data,
-
-          message: args.data.message
-            ? {
-                connect: args.data.message,
-              }
-            : undefined,
-        },
+        data: args.data,
       });
     } catch (error) {
       if (isRecordNotFoundError(error)) {
@@ -217,29 +200,5 @@ export class GunResolverBase {
       }
       throw error;
     }
-  }
-
-  @graphql.ResolveField(() => User, { nullable: true })
-  @nestAccessControl.UseRoles({
-    resource: "Gun",
-    action: "read",
-    possession: "any",
-  })
-  async message(
-    @graphql.Parent() parent: Gun,
-    @gqlUserRoles.UserRoles() userRoles: string[]
-  ): Promise<User | null> {
-    const permission = this.rolesBuilder.permission({
-      role: userRoles,
-      action: "read",
-      possession: "any",
-      resource: "User",
-    });
-    const result = await this.service.getMessage(parent.id);
-
-    if (!result) {
-      return null;
-    }
-    return permission.filter(result);
   }
 }

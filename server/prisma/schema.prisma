@@ -11,7 +11,6 @@ model User {
   accounts    Account[]
   createdAt   DateTime  @default(now())
   firstName   String?
-  guns        Gun[]
   id          String    @id @default(cuid())
   lastName    String?
   password    String
@@ -43,8 +42,7 @@ model Location {
 model Gun {
   createdAt DateTime @default(now())
   id        String   @id @default(cuid())
-  message   User?    @relation(fields: [messageId], references: [id])
-  messageId String?
+  message   String?
   name      String?
   updatedAt DateTime @updatedAt
 }

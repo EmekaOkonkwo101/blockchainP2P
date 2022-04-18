@@ -10,7 +10,7 @@ https://docs.amplication.com/docs/how-to/custom-code
 ------------------------------------------------------------------------------
   */
 import { PrismaService } from "nestjs-prisma";
-import { Prisma, User, Account, Gun } from "@prisma/client";
+import { Prisma, User, Account } from "@prisma/client";
 import { PasswordService } from "../../auth/password.service";
 import { transformStringFieldUpdateInput } from "../../prisma.util";
 
@@ -81,16 +81,5 @@ export class UserServiceBase {
         where: { id: parentId },
       })
       .accounts(args);
-  }
-
-  async findGuns(
-    parentId: string,
-    args: Prisma.GunFindManyArgs
-  ): Promise<Gun[]> {
-    return this.prisma.user
-      .findUnique({
-        where: { id: parentId },
-      })
-      .guns(args);
   }
 }

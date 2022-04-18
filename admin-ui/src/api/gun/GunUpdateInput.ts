@@ -1,6 +1,4 @@
-import { UserWhereUniqueInput } from "../user/UserWhereUniqueInput";
-
 export type GunUpdateInput = {
-  message?: UserWhereUniqueInput | null;
+  message?: string | null;
   name?: string | null;
 };
