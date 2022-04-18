@@ -3,8 +3,4 @@ import { ITokenService } from "./ITokenService";
 // eslint-disable-next-line import/no-unresolved
 import { TokenServiceBase } from "./base/token.service.base";
 //@ts-ignore
-export class TokenService extends TokenServiceBase implements ITokenService {
-    decodeToken(bearer: string): string {
-        return this.jwtService.verify(bearer).username;
-    }
-}
+export class TokenService extends TokenServiceBase implements ITokenService {}

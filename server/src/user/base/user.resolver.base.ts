@@ -27,6 +27,8 @@ import { UserFindUniqueArgs } from "./UserFindUniqueArgs";
 import { User } from "./User";
 import { AccountFindManyArgs } from "../../account/base/AccountFindManyArgs";
 import { Account } from "../../account/base/Account";
+import { GunFindManyArgs } from "../../gun/base/GunFindManyArgs";
+import { Gun } from "../../gun/base/Gun";
 import { UserService } from "../user.service";
 
 @graphql.Resolver(() => User)
@@ -222,6 +224,32 @@ export class UserResolverBase {
       resource: "Account",
     });
     const results = await this.service.findAccounts(parent.id, args);
+
+    if (!results) {
+      return [];
+    }
+
+    return results.map((result) => permission.filter(result));
+  }
+
+  @graphql.ResolveField(() => [Gun])
+  @nestAccessControl.UseRoles({
+    resource: "User",
+    action: "read",
+    possession: "any",
+  })
+  async guns(
+    @graphql.Parent() parent: User,
+    @graphql.Args() args: GunFindManyArgs,
+    @gqlUserRoles.UserRoles() userRoles: string[]
+  ): Promise<Gun[]> {
+    const permission = this.rolesBuilder.permission({
+      role: userRoles,
+      action: "read",
+      possession: "any",
+      resource: "Gun",
+    });
+    const results = await this.service.findGuns(parent.id, args);
 
     if (!results) {
       return [];

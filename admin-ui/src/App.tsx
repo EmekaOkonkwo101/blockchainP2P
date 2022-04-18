@@ -17,6 +17,10 @@ import { LocationList } from "./location/LocationList";
 import { LocationCreate } from "./location/LocationCreate";
 import { LocationEdit } from "./location/LocationEdit";
 import { LocationShow } from "./location/LocationShow";
+import { GunList } from "./gun/GunList";
+import { GunCreate } from "./gun/GunCreate";
+import { GunEdit } from "./gun/GunEdit";
+import { GunShow } from "./gun/GunShow";
 import { jwtAuthProvider } from "./auth-provider/ra-auth-jwt";
 
 const App = (): React.ReactElement => {
@@ -63,6 +67,13 @@ const App = (): React.ReactElement => {
           edit={LocationEdit}
           create={LocationCreate}
           show={LocationShow}
+        />
+        <Resource
+          name="Gun"
+          list={GunList}
+          edit={GunEdit}
+          create={GunCreate}
+          show={GunShow}
         />
       </Admin>
     </div>
