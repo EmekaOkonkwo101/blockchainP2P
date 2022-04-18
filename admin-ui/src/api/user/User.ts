@@ -8,7 +8,7 @@ export type User = {
   guns?: Array<Gun>;
   id: string;
   lastName: string | null;
-  phoneNumber: number;
+  phoneNumber: number | null;
   roles: Array<string>;
   updatedAt: Date;
   username: string;

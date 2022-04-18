@@ -7,7 +7,7 @@ export type UserUpdateInput = {
   guns?: GunUpdateManyWithoutUsersInput;
   lastName?: string | null;
   password?: string;
-  phoneNumber?: number;
+  phoneNumber?: number | null;
   roles?: Array<string>;
   username?: string;
 };

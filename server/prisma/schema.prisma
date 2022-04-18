@@ -15,7 +15,7 @@ model User {
   id          String    @id @default(cuid())
   lastName    String?
   password    String
-  phoneNumber Int
+  phoneNumber Int?
   roles       String[]
   updatedAt   DateTime  @updatedAt
   username    String    @unique

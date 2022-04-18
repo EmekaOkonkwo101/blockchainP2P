@@ -7,7 +7,7 @@ export type UserCreateInput = {
   guns?: GunCreateNestedManyWithoutUsersInput;
   lastName?: string | null;
   password: string;
-  phoneNumber: number;
+  phoneNumber?: number | null;
   roles: Array<string>;
   username: string;
 };
