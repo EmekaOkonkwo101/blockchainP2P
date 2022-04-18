@@ -84,6 +84,7 @@ export class AccountControllerBase {
         balance: true,
         createdAt: true,
         id: true,
+        transaction: true,
         updatedAt: true,
 
         user: {
@@ -128,6 +129,7 @@ export class AccountControllerBase {
         balance: true,
         createdAt: true,
         id: true,
+        transaction: true,
         updatedAt: true,
 
         user: {
@@ -171,6 +173,7 @@ export class AccountControllerBase {
         balance: true,
         createdAt: true,
         id: true,
+        transaction: true,
         updatedAt: true,
 
         user: {
@@ -243,6 +246,7 @@ export class AccountControllerBase {
           balance: true,
           createdAt: true,
           id: true,
+          transaction: true,
           updatedAt: true,
 
           user: {
@@ -287,6 +291,7 @@ export class AccountControllerBase {
           balance: true,
           createdAt: true,
           id: true,
+          transaction: true,
           updatedAt: true,
 
           user: {

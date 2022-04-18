@@ -1,5 +1,11 @@
 [
   {
+    "role": "admin",
+    "resource": "User",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
     "role": "user",
     "resource": "User",
     "action": "read:own",
@@ -14,7 +20,7 @@
   {
     "role": "admin",
     "resource": "User",
-    "action": "read:own",
+    "action": "create:any",
     "attributes": "*"
   },
   {
@@ -32,7 +38,7 @@
   {
     "role": "admin",
     "resource": "User",
-    "action": "create:any",
+    "action": "update:any",
     "attributes": "*"
   },
   {
@@ -50,7 +56,7 @@
   {
     "role": "admin",
     "resource": "User",
-    "action": "update:any",
+    "action": "delete:any",
     "attributes": "*"
   },
   {
@@ -68,7 +74,7 @@
   {
     "role": "admin",
     "resource": "User",
-    "action": "delete:any",
+    "action": "read:any",
     "attributes": "*"
   },
   {
@@ -85,8 +91,8 @@
   },
   {
     "role": "admin",
-    "resource": "User",
-    "action": "read:any",
+    "resource": "Account",
+    "action": "read:own",
     "attributes": "*"
   },
   {
@@ -104,7 +110,7 @@
   {
     "role": "admin",
     "resource": "Account",
-    "action": "read:own",
+    "action": "create:any",
     "attributes": "*"
   },
   {
@@ -122,7 +128,7 @@
   {
     "role": "admin",
     "resource": "Account",
-    "action": "create:any",
+    "action": "update:any",
     "attributes": "*"
   },
   {
@@ -133,12 +139,6 @@
   },
   {
     "role": "manager",
-    "resource": "Account",
-    "action": "update:any",
-    "attributes": "*"
-  },
-  {
-    "role": "admin",
     "resource": "Account",
     "action": "update:any",
     "attributes": "*"
@@ -152,6 +152,24 @@
   {
     "role": "user",
     "resource": "Account",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "manager",
+    "resource": "Account",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Account",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Account",
     "action": "read:any",
     "attributes": "*"
   },
@@ -163,7 +181,91 @@
   },
   {
     "role": "admin",
-    "resource": "Account",
+    "resource": "Location",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Location",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "manager",
+    "resource": "Location",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Location",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Location",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "manager",
+    "resource": "Location",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Location",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Location",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "manager",
+    "resource": "Location",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Location",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Location",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "manager",
+    "resource": "Location",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Location",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Location",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "manager",
+    "resource": "Location",
     "action": "read:any",
     "attributes": "*"
   }
